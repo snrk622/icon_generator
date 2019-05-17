@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>svg</title>
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <div id="app">
+            <div class="svgView">
+                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+                        <title>My Face</title>
+                        <g id="レイヤー_2" data-name="レイヤー 2">
+                            <g id="skin">
+                                <g id="ears">
+                                    <g id="ear_left">
+                                        <path id="ear_left-2" data-name="ear_left" class="cls-1" d="M22.45,175.5h.83A14.47,14.47,0,0,1,37.75,190v43.76a0,0,0,0,1,0,0H22.45A21.12,21.12,0,0,1,1.33,212.61v-16A21.12,21.12,0,0,1,22.45,175.5Z" transform="translate(-32.64 5.8) rotate(-9.25)" :style="{fill: skin_color}"/>
+                                        <path id="ear_left_shadow" class="cls-2" d="M42.2,230.46l-15.11,2.47a22.5,22.5,0,0,1-4.39.26,109.2,109.2,0,0,1-.89-14V175.15a14.48,14.48,0,0,1,13.35,12.12Z" style="opacity: 0.05"/>
+                                    </g>
+                                    <g id="ear_right">
+                                        <path id="ear_right-2" data-name="ear_right" class="cls-1" d="M255.23,175.47h15.3a0,0,0,0,1,0,0v43.76a14.47,14.47,0,0,1-14.47,14.47h-.83a21.12,21.12,0,0,1-21.12-21.12v-16a21.12,21.12,0,0,1,21.12-21.12Z" transform="translate(468.47 447.06) rotate(-170.75)" :style="{fill: skin_color}"/>
+                                        <path id="ear_right_shadow" class="cls-2" d="M229.54,230.45l15.11,2.46a21.75,21.75,0,0,0,4.39.26,109,109,0,0,0,.89-14V175.14a14.47,14.47,0,0,0-13.35,12.12Z" style="opacity: 0.05"/>
+                                    </g>
+                                </g>
+                                <path id="face" class="cls-1" d="M245.13,143.88v83.36c0,55.84-48.88,101.1-109.16,101.1-51.52,0-94.7-33-106.16-77.51a93.4,93.4,0,0,1-3-23.59V143.88C26.81,88,75.68,42.78,136,42.78c30.14,0,57.43,11.32,77.18,29.61S245.13,116,245.13,143.88Z" :style="{fill: skin_color}"/>
+                            </g>
+                            <g id="hair">
+                                <path v-show="hair_style === 'hair1' " id="hair1" class="cls-3" d="M217.94,41.47s-15-56-109.62-37.85-111,142-81.51,168c0,0,113.06-11.84,146.18-53.64,0,0,14.94,53.64,72.13,53.64C245.12,171.59,295.23,77,217.94,41.47Z" :style="{fill: hair_color}"/>
+                                <path v-show="hair_style === 'hair2' " id="hair2" class="cls-3" d="M18.72,175.62a14.3,14.3,0,0,1,8.52,1.21v-15c5.33,0,90.91.81,108.73,0,18.4-.84,35.84-50.3,35.84-50.3,3.46,18.48,14.65,32.57,23.44,41.15a33.74,33.74,0,0,0,23.57,9.53h26.74v14.3l.41-.16.54-.19c.29-.1.58-.18.87-.26a14,14,0,0,1,6.1-.32l.82.13a21,21,0,0,1,7,2.48c-.37-5.38-.85-10.71-1.47-16-3.08-26.21-9.45-50.68-20.35-69.73-43.44-75.93-99.32-60-103.54-58.71-4.22-1.34-60.1-17.22-103.53,58.71a143.22,143.22,0,0,0-13,31.84c-4.76,16.65-7.55,35.1-8.82,54.05a21,21,0,0,1,7.29-2.62Zm230.5,57.83a20.74,20.74,0,0,1-3.84-.2v.07c-3.27,53.12-50.82,95.26-109,95.26-51.52,0-94.7-33.05-106.16-77.51a93.23,93.23,0,0,1-2.83-17.84v0l-.15,0a21.81,21.81,0,0,1-4.4.26,21,21,0,0,1-12.33-4.73c3.56,61.53,19.35,116,32.1,117.79H229.31c12.74-1.74,28.52-56.16,32.1-117.62A21,21,0,0,1,249.22,233.45Z" :style="{fill: hair_color}"/>
+                            </g>
+                            <g id="eyes">
+                                <g v-show="eye_style === 'eye1'" id="eye1">
+                                    <circle id="eye_left" class="cls-3" cx="89.43" cy="204.58" :r="eye_size" :style="{fill: eye_color_left}"/>
+                                    <circle id="eye_right" class="cls-3" cx="185.07" cy="204.58" :r="eye_size" :style="{fill: eye_color_right}"/>
+                                </g>
+                                <g v-show="eye_style === 'eye2'" id="eye2">
+                                    <g id="eye_left-2" data-name="eye_left">
+                                        <circle id="eye_white" class="cls-4" cx="89.43" cy="204.58" :r="whiteEye()" style="fill: #efefef"/>
+                                        <circle id="eye_black" class="cls-3" cx="89.43" cy="204.58" :r="eye_size" :style="{fill: eye_color_left}"/>
+                                    </g>
+                                    <g id="eye_right-2" data-name="eye_right">
+                                        <circle id="eye_white-2" data-name="eye_white" class="cls-4" cx="185.07" cy="204.58" :r="whiteEye()" style="fill: #efefef"/>
+                                        <circle id="eye_black-2" data-name="eye_black" class="cls-3" cx="185.07" cy="204.58" :r="eye_size" :style="{fill: eye_color_right}">
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="eyebrows">
+                                <g id="eyebrow1">
+                                    <path id="eyebrow_left" class="cls-3" d="M70.67,171.59h38.76a1.48,1.48,0,0,1,1.48,1.48v0a6.52,6.52,0,0,1-6.52,6.52H70.67A2.71,2.71,0,0,1,68,176.89V174.3A2.71,2.71,0,0,1,70.67,171.59Z" transform="translate(178.87 351.18) rotate(-180)" :style="{fill: eyebrow_color}"/>
+                                    <path id="eyebrow_right" class="cls-3" d="M166.31,171.59H200a6.52,6.52,0,0,1,6.52,6.52v0a1.48,1.48,0,0,1-1.48,1.48H166.31a2.71,2.71,0,0,1-2.71-2.71V174.3a2.71,2.71,0,0,1,2.71-2.71Z"  :style="{fill: eyebrow_color}"/>
+                                </g>
+                            </g>
+                            <g id="noses">
+                                <path id="nose1" class="cls-5" d="M125.93,237.16h19.75a0,0,0,0,1,0,0v0a6.45,6.45,0,0,1-6.45,6.45h-6.85a6.45,6.45,0,0,1-6.45-6.45v0a0,0,0,0,1,0,0Z" style="opacity: 0.1"/>
+                            </g>
+                            <g id="mouthes">
+                                <g v-show="mouth_style === 'mouth1'" id="mouth1">
+                                    <path id="mouth" class="cls-6" d="M166,269.36a26.62,26.62,0,0,1-5.64,16.43,26.05,26.05,0,0,1-2.2,2.5,26.7,26.7,0,0,1-18.93,7.84h-6.79a26.78,26.78,0,0,1-26.78-26.77,5.21,5.21,0,0,1,1.1-3.21l.27-.32.17-.18a5.24,5.24,0,0,1,3.72-1.54h49.83a5.2,5.2,0,0,1,4.13,2,3.19,3.19,0,0,1,.31.44A5.11,5.11,0,0,1,166,269.36Z" style="fill:#433b3c"/>
+                                    <path id="tongue" class="cls-7" d="M160.33,285.79a26.05,26.05,0,0,1-2.2,2.5,26.7,26.7,0,0,1-18.93,7.84h-6.79a26.71,26.71,0,0,1-21.14-10.34,46.14,46.14,0,0,1,49.06,0Z" style="fill:#d2514c"/>
+                                    <path id="teeth" class="cls-4" d="M164.85,266.14c-.7,2.51-2.3,4.28-4.15,4.28H111.24c-1.93,0-3.58-1.91-4.24-4.59l.17-.18a5.24,5.24,0,0,1,3.72-1.54h49.83A5.2,5.2,0,0,1,164.85,266.14Z" style="fill: #efefef"/>
+                                </g>
+                                <g v-show="mouth_style === 'mouth2'" id="mouth2">
+                                    <path id="mouth-2" data-name="mouth" class="cls-8" d="M163.6,287.76v5.57a5.43,5.43,0,0,1-5.44,5.44H113.78a5.43,5.43,0,0,1-5.44-5.44v-5.57a27.63,27.63,0,0,1,45.18-21.34,26.06,26.06,0,0,1,2,1.8A27.55,27.55,0,0,1,163.6,287.76Z" style="fill:#433b3c"/>
+                                    <path id="tongue-2" data-name="tongue" class="cls-9" d="M163.6,291.62v1.71a5.43,5.43,0,0,1-5.44,5.44H113.78a5.43,5.43,0,0,1-5.44-5.44v-2c7-5.1,16.74-8.24,27.46-8.24C146.69,283.13,156.54,286.38,163.6,291.62Z" style="fill:#d2514c"/>
+                                    <path id="teeth-2" data-name="teeth" class="cls-4" d="M152.42,266.42h-32.9a.38.38,0,0,1-.24-.68,27.63,27.63,0,0,1,33.38,0A.38.38,0,0,1,152.42,266.42Z" style="fill: #efefef"/>
+                                </g>
+                            </g>
+                        </g> 
+                    </svg>    
+            </div> 
+            <div class="props">
+                <p>
+                    <span>Skin Color: </span>
+                    <input type="color" v-model="skin_color">
+                </p>
+                <p>
+                    <spna>Hair Style: </span>
+                    <select v-model="hair_style">
+                        <option v-for="hair_style in hair_styles">{{ hair_style }}</option>
+                    </select>
+                </p>
+                <p>
+                    <span>Hair Color: </span>
+                    <input type="color" v-model="hair_color">
+                </p>
+                <p>
+                    <span>Eyebrow Color: </span>
+                    <input type="color" v-model="eyebrow_color">
+                </p>
+                <p>
+                    <span>Eye Style: </span>
+                    <select v-model="eye_style">
+                        <option v-for="eye_style in eye_styles">{{ eye_style }}</option>
+                    </select>
+                </p>
+                <p>
+                    <span>Eye Size: </span>
+                    <input type="range" min=3 max=20 v-model="eye_size">
+                </p>
+                <p>
+                    <span>Eye Color(R): </span>
+                    <input type="color" v-model="eye_color_right">
+                </p>
+                <p>
+                    <span>Eye Color(L): </span>
+                    <input type="color" v-model="eye_color_left">
+                </p>
+                <p>
+                    <span>Mouth Style: </span>
+                    <select v-model="mouth_style">
+                        <option v-for="mouth_style in mouth_styles">{{ mouth_style }}</option>
+                    </select>
+                </p>
+            </div>
+            
+            
+        </div>
+        
+          
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="main.js"></script>    
+    </body>
+</html>
